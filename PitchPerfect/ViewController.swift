@@ -20,8 +20,9 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func recordMe(sender: UIButton) {
-        print("I am recording !!!")
+   
+    @IBAction func recordAudio(sender: UIButton) {
+        print("I am recording!!")
     }
 
 }
