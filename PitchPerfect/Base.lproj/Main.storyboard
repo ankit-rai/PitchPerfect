@@ -111,26 +111,32 @@
                     <view key="view" contentMode="scaleToFill" id="ePf-Jl-4VU">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aog-mS-9G0">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xzb-F6-jjW">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" image="bunnny"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="131" width="190" height="124"/>
-                                </variation>
+                                <state key="normal" image="StopButton"/>
                                 <connections>
-                                    <action selector="clickBunny:" destination="rox-V5-ZcJ" eventType="touchUpInside" id="AJU-cQ-kjU"/>
+                                    <action selector="stopPlayback:" destination="rox-V5-ZcJ" eventType="touchUpInside" id="QRX-7I-Okh"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4tb-9A-wNb">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Fast" image="bunnny"/>
+                                <state key="normal" title="Fast" image="fast"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="246" y="144" width="134" height="100"/>
                                 </variation>
+                                <connections>
+                                    <action selector="playFast:" destination="rox-V5-ZcJ" eventType="touchUpInside" id="2G6-tW-bmf"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xzb-F6-jjW">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aog-mS-9G0">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" image="StopButton"/>
+                                <state key="normal" image="slow"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="132" width="190" height="124"/>
+                                </variation>
+                                <connections>
+                                    <action selector="playSlow:" destination="rox-V5-ZcJ" eventType="touchUpInside" id="c8D-Vm-gau"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -140,9 +146,9 @@
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="Aog-mS-9G0"/>
-                                <exclude reference="4tb-9A-wNb"/>
                                 <exclude reference="Xzb-F6-jjW"/>
+                                <exclude reference="4tb-9A-wNb"/>
+                                <exclude reference="Aog-mS-9G0"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="hIv-5d-FCc"/>
@@ -151,9 +157,9 @@
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="Aog-mS-9G0"/>
-                                <include reference="4tb-9A-wNb"/>
                                 <include reference="Xzb-F6-jjW"/>
+                                <include reference="4tb-9A-wNb"/>
+                                <include reference="Aog-mS-9G0"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="hIv-5d-FCc"/>
@@ -162,6 +168,11 @@
                         </variation>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="fast" destination="4tb-9A-wNb" id="YtP-6c-I05"/>
+                        <outlet property="slow" destination="Aog-mS-9G0" id="4Vr-A5-chc"/>
+                        <outlet property="stopButton" destination="Xzb-F6-jjW" id="xe0-Y5-mJ9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L7o-7L-faw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -189,6 +200,7 @@
     <resources>
         <image name="MicroPhone" width="100" height="100"/>
         <image name="StopButton" width="50" height="50"/>
-        <image name="bunnny" width="100" height="100"/>
+        <image name="fast" width="100" height="100"/>
+        <image name="slow" width="100" height="100"/>
     </resources>
 </document>
